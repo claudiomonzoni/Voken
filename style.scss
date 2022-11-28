@@ -1,0 +1,29 @@
+@use 'sass/forward' as *;
+
+// estilos del carrusel
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+// fuentes
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+
+html {
+  background-color: $gris;
+}
+
+body {
+  font-family: Montserrat;
+  position: relative;
+}
+
+.minmax {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(max-content, 1fr));
+}
+
+.conte {
+  max-width: 1600px;
+  margin: 0 auto;
+  @media screen and (max-width: 1600px) {
+    padding: 0 10vw;
+}
+}

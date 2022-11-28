@@ -1,0 +1,23 @@
+{
+  "name": "arranque-parcel",
+  "version": "1.0.0",
+  "description": "Arranque de sitios con parcel",
+  "scripts": {
+    "dev": "parcel index.html --open",
+    "prod": "parcel build index.html --public-url ./ "
+  },
+  "author": "Claudio Monzoni",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.0",
+    "parcel": "^2.8.0",
+    "sass": "^1.32.8",
+    "simple-icons": "^4.15.0"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1",
+    "gsap": "^3.6.0",
+    "mm": "^3.2.0",
+    "modulo": "0.0.3"
+  }
+}

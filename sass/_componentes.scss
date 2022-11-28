@@ -1,0 +1,132 @@
+@use 'mediaQ' as *;
+@use 'color' as *;
+// Boton toogle
+.menu-toggle {
+  position: fixed;
+
+  display: none;
+  @include cel {
+    display: block;
+    z-index: 99000;
+  }
+  right: 4vh;
+  top: 4.6vh;
+  z-index: 520;
+  width: 30px;
+  height: 22px;
+  background: transparent;
+  border-top: 4px solid;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 4px solid;
+  color: $gris;
+  font-size: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.menu-toggle:before,
+.menu-toggle:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: -webkit-transform 0.25s ease-in-out;
+  -o-transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+}
+
+button.is-active {
+  border-color: transparent;
+  border-left: none;
+}
+button.is-active:before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+button.is-active:after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  vertical-align: middle;
+}
+
+// menu de navegación
+nav {
+  background-color: $beige;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position:fixed;
+  width: 100%;
+  z-index: 900;
+  .logo {
+    padding: 1em;
+  }
+  // ultimo ul aplicar esta regla
+  ul + ul {
+    padding: 0 1em;
+  }
+  ul {
+    display: flex;
+    li {
+      padding: 0 0.5em;
+    }
+  }
+
+  #social{
+    svg{
+      max-width: 30px;
+      margin: 1em;
+      fill:blue;
+    }
+  }
+  @include cel {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height: 85px;
+    .logo {
+      align-self: flex-start;
+    }
+    ul:nth-child(3n) {
+      li {
+        padding: 1.5em 0;
+      }
+    }
+
+    ul:nth-child(2n) {
+      display: flex;
+      justify-content: center;
+    }
+
+    ul {
+      flex: 1 0 100%;
+      visibility: hidden;
+      display: none;
+      padding: 2em;
+    }
+  }
+}
+
+// agregamos padding a todo lo que este debajo de nav
+
+nav + section{
+  padding-top: 90px;
+}
