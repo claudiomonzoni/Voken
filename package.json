@@ -4,7 +4,7 @@
   "description": "Arranque de sitios con parcel",
   "scripts": {
     "dev": "parcel index.html --open",
-    "prod": "parcel build index.html --public-url ./ "
+    "prod": "parcel build index.html --public-url ./ --no-optimize --no-content-hash"
   },
   "author": "Claudio Monzoni",
   "license": "ISC",

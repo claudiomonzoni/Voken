@@ -1,15 +1,14 @@
-@use 'mediaQ' as *;
-@use 'color' as *;
+@use "mediaQ" as *;
+@use "color" as *;
 // Boton toogle
 .menu-toggle {
-  position: fixed;
-
+  position: absolute;
   display: none;
   @include cel {
     display: block;
     z-index: 99000;
   }
-  right: 4vh;
+  right: 0vh;
   top: 4.6vh;
   z-index: 520;
   width: 30px;
@@ -19,7 +18,7 @@
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
   border-bottom: 4px solid;
-  color: $gris;
+  color:$acento;
   font-size: 0;
   -webkit-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
@@ -68,16 +67,19 @@ button {
 }
 
 // menu de navegación
+.visibleMenu {
+  visibility: visible!important;
+}
+
 nav {
-  background-color: $beige;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
-  position:fixed;
   width: 100%;
   z-index: 900;
+  position: relative;
   .logo {
+    width: clamp(9rem, 15vw, 12rem);
     padding: 1em;
   }
   // ultimo ul aplicar esta regla
@@ -86,22 +88,38 @@ nav {
   }
   ul {
     display: flex;
+    justify-content: center;
+    align-items: center;
     li {
-      padding: 0 0.5em;
+      padding: 0 1rem;
+      position: relative;
     }
   }
 
-  #social{
-    svg{
-      max-width: 30px;
-      margin: 1em;
-      fill:blue;
+  .sport:hover + ul {
+    visibility: visible;
+  }
+
+  #submenu {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: -3rem;
+    background: $acento;
+    padding: 1rem;
+    border-radius: $radius;
+    display: flex;
+    flex-wrap: wrap;
+    a {
+      color: #fff;
     }
   }
+
   @include cel {
     flex-wrap: wrap;
     align-items: flex-start;
-    height: 85px;
+    height: auto;
     .logo {
       align-self: flex-start;
     }
@@ -125,8 +143,41 @@ nav {
   }
 }
 
-// agregamos padding a todo lo que este debajo de nav
 
-nav + section{
-  padding-top: 90px;
+#hero{
+  display: flex;
+  flex-wrap: wrap;
+  background: url("assets/monatana-fiesch-volken.png") no-repeat;
+  background-size:auto;
+  background-position: right bottom;
+  height: 70vh;
+  border: solid;
+  @include hd{
+    background-position: right bottom;
+  }
+  .izq{
+    flex: 1;
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    .bandeja{
+      width: 70%;
+    }
+  }
+  .der{
+    flex: 1;
+    display:grid;
+    grid-template-columns: repeat(3, auto auto);
+    align-items: center;
+    justify-content: center;
+    img{
+      width: auto;
+    }
+    img:nth-child(2){
+      padding-top: 8rem;
+    }
+    img:nth-child(3){
+      padding-top: 3rem;
+    }
+  }
 }

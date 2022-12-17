@@ -33,16 +33,19 @@ function esCell(x) {
   }
 }
 
-// insertar iconos de redes sociales 
-import Icono, {face, insta} from './iconos'
-const faceicono = new Icono("http://facebook.com", "#social", face)
-faceicono.construirIcono()
-const instaIcono = new Icono("http://instagram.com", "#social", insta)
-instaIcono.construirIcono()
+// submemu
+const sport = document.querySelector(".sport");
+const submenu = document.querySelector("#submenu");
 
-//importo el carrusel
-import {slideIndex} from './glide'
-slideIndex()
+sport.addEventListener("mouseenter", function(e)
+{ 
+
+ submenu.classList.add("visibleMenu")
+})
+window.addEventListener("click", function(e)
+{ 
+ submenu.classList.remove("visibleMenu")
+})
 
 // importo gsap
 import gsap from 'gsap'
@@ -53,13 +56,3 @@ gsap.from(".logo, ul>li",
   opacity: 0,
   duration: 1 //1 segundo
 })
-
-
-// cargar modulos solo por secciones
-// switch (document.location.pathname)
-// {
-//   case '/seccion':
-//   break
-
-//   default:
-// }

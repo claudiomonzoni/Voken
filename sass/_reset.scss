@@ -1,7 +1,10 @@
 //reset
 html {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: clamp(1rem, 1.1vw, 1.3rem);
+  background: #fff;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgb(227, 235, 241) 100%);
+  background-repeat: no-repeat;
 }
 
 *,
@@ -25,12 +28,11 @@ ul {
   font-weight: normal;
 }
 
-h1,
-h2 {
-  font-weight: 700;
+h1 {
+  font-weight: 900;
 }
-h3 {
-  font-weight: 300;
+h2, h3 {
+  font-weight: 700;
 }
 
 ol,
@@ -44,4 +46,5 @@ img {
 }
 a{
   text-decoration: none;
+  
 }

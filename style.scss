@@ -1,19 +1,27 @@
 @use 'sass/forward' as *;
 
-// estilos del carrusel
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 // fuentes
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@700;900&display=swap');
 
-html {
-  background-color: $gris;
-}
+
 
 body {
   font-family: Montserrat;
   position: relative;
+ 
 }
 
+a{
+  color: $acento;
+  font-weight: bold;
+}
+h1{
+  font-size: clamp(3rem, 4vw, 4rem);
+}
+h1, h2, h3{
+  font-family: Raleway;
+  color: $acento;
+}
 .minmax {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -21,9 +29,7 @@ body {
 }
 
 .conte {
-  max-width: 1600px;
-  margin: 0 auto;
-  @media screen and (max-width: 1600px) {
-    padding: 0 10vw;
+  width: min(100% - 5rem, 100rem);
+  margin-inline: auto;
 }
-}
+
