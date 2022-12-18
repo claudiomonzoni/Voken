@@ -52,7 +52,7 @@ import gsap from 'gsap'
 gsap.from(".logo, ul>li",
 {
   stagger:0.1,
-  x:400,
+  y:100,
   opacity: 0,
   duration: 1 //1 segundo
 })

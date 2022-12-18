@@ -18,7 +18,7 @@
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
   border-bottom: 4px solid;
-  color:$acento;
+  color: $acento;
   font-size: 0;
   -webkit-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
@@ -68,7 +68,7 @@ button {
 
 // menu de navegación
 .visibleMenu {
-  visibility: visible!important;
+  visibility: visible !important;
 }
 
 nav {
@@ -142,42 +142,107 @@ nav {
     }
   }
 }
+@mixin boton($flecha){
+  background: $acento;
+  color: #fff;
+  padding: .5rem 2rem;
+  display: inline-flex;
+  margin:1rem 0;
+  border-radius: $radius;
+  img{
+    margin-right: .8rem;
+    display: none;
+  }
+  box-shadow: 1px 6px 15px -2px rgba(0,91,228,0.73);
+  -webkit-box-shadow: 1px 6px 15px -2px rgba(0,91,228,0.73);
+  -moz-box-shadow: 1px 6px 15px -2px rgba(0,91,228,0.73);
 
+  @if $flecha {
+    img{
+      display: block;
+    }
+  }
+}
 
-#hero{
+.btn{
+// @include boton($flecha:true);
+@include boton($flecha:true);
+}
+#hero {
   display: flex;
   flex-wrap: wrap;
   background: url("assets/monatana-fiesch-volken.png") no-repeat;
-  background-size:auto;
-  background-position: right bottom;
-  height: 70vh;
-  border: solid;
-  @include hd{
+  background-size: 65%;
+  background-position: 110% top;
+  min-height: 70vh;
+  padding: 0 2rem;
+  @include hd {
     background-position: right bottom;
+    background-size: 55%;
   }
-  .izq{
+  @include cel {
+    background-size: 130%;
+    background-position: 50% 85%;
+    padding: none;
+  }
+
+  .izq {
     flex: 1;
     display: inherit;
     justify-content: center;
     align-items: center;
-    .bandeja{
-      width: 70%;
+    .bandeja {
+      width:75%;
+      p {
+        color: $acento;
+        padding: 1rem 0;
+        span {
+          color: #999;
+          font-weight: bold;
+        }
+      }
+    }
+    @include cel {
+      flex: auto;
+      .bandeja {
+        width: 100%;
+        padding: 1rem;
+      }
     }
   }
-  .der{
+  .der {
     flex: 1;
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(3, auto auto);
     align-items: center;
     justify-content: center;
-    img{
+    img {
       width: auto;
     }
-    img:nth-child(2){
+    @include cel {
+      flex: auto;
+      padding: 1rem;
+    }
+    img:nth-child(2) {
       padding-top: 8rem;
     }
-    img:nth-child(3){
+    img:nth-child(3) {
       padding-top: 3rem;
+    }
+  }
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+    li{
+      padding: 0 .2rem;
+      margin-top: .7rem;
+      flex: 0 1 15%;
+      @include cel{
+        flex: 0 1 25%;
+        padding: 0 .5rem;
+      }
     }
   }
 }
