@@ -1,5 +1,6 @@
 @use "mediaQ" as *;
 @use "color" as *;
+@use "anima" as *;
 // Boton toogle
 .menu-toggle {
   position: absolute;
@@ -99,7 +100,11 @@ nav {
   .sport:hover + ul {
     visibility: visible;
   }
-
+  
+  .sport{
+    @include cel{
+    }
+  }
   #submenu {
     visibility: hidden;
     position: absolute;
@@ -111,8 +116,19 @@ nav {
     border-radius: $radius;
     display: flex;
     flex-wrap: wrap;
+    @extend .anima;
     a {
       color: #fff;
+    }
+    @include cel {
+      visibility:visible;
+      display: none;
+      opacity: 0;
+      position: relative;
+      bottom: auto;
+      li{
+        padding: .8rem 1rem;
+      }
     }
   }
 
@@ -124,14 +140,10 @@ nav {
       align-self: flex-start;
     }
     ul:nth-child(3n) {
+      border-top: solid 1px $acento;
       li {
-        padding: 1.5em 0;
+        padding: 1em 0;
       }
-    }
-
-    ul:nth-child(2n) {
-      display: flex;
-      justify-content: center;
     }
 
     ul {
@@ -142,31 +154,31 @@ nav {
     }
   }
 }
-@mixin boton($flecha){
+@mixin boton($flecha) {
   background: $acento;
   color: #fff;
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
   display: inline-flex;
-  margin:1rem 0;
+  margin: 1rem 0;
   border-radius: $radius;
-  img{
-    margin-right: .8rem;
+  img {
+    margin-right: 0.8rem;
     display: none;
   }
-  box-shadow: 1px 6px 15px -2px rgba(0,91,228,0.73);
-  -webkit-box-shadow: 1px 6px 15px -2px rgba(0,91,228,0.73);
-  -moz-box-shadow: 1px 6px 15px -2px rgba(0,91,228,0.73);
+  box-shadow: 1px 6px 15px -2px rgba(0, 91, 228, 0.73);
+  -webkit-box-shadow: 1px 6px 15px -2px rgba(0, 91, 228, 0.73);
+  -moz-box-shadow: 1px 6px 15px -2px rgba(0, 91, 228, 0.73);
 
   @if $flecha {
-    img{
+    img {
       display: block;
     }
   }
 }
 
-.btn{
-// @include boton($flecha:true);
-@include boton($flecha:true);
+.btn {
+  // @include boton($flecha:true);
+  @include boton($flecha: true);
 }
 #hero {
   display: flex;
@@ -192,7 +204,7 @@ nav {
     justify-content: center;
     align-items: center;
     .bandeja {
-      width:75%;
+      width: 75%;
       p {
         color: $acento;
         padding: 1rem 0;
@@ -234,14 +246,14 @@ nav {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content:space-between;
-    li{
-      padding: 0 .2rem;
-      margin-top: .7rem;
+    justify-content: space-between;
+    li {
+      padding: 0 0.2rem;
+      margin-top: 0.7rem;
       flex: 0 1 15%;
-      @include cel{
+      @include cel {
         flex: 0 1 25%;
-        padding: 0 .5rem;
+        padding: 0 0.5rem;
       }
     }
   }

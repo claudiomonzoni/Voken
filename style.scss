@@ -31,5 +31,8 @@ h1, h2, h3{
 .conte {
   width: min(100% - 5rem, 100rem);
   margin-inline: auto;
+  @include cel{
+    width: min(100% - 2rem, 100rem);
+  }
 }
 

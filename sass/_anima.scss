@@ -21,16 +21,28 @@
       height: 85px;
     }
   }
-  
+
+  // animacion submenu
+  @keyframes submenu{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
   .menuFullAbierto {
     animation: menuAbierto 1.2s ease forwards;
-    ul {
+    ul, #submenu {
       display: block;
       visibility: visible !important;
-      opacity: 1 !important;
+      animation: submenu 1.2s ease forwards;
     }
+   
+    
   }
   
   .desanimaMenu {
-    animation: menuCerrado 1s ease backwards ;
+    animation: menuCerrado 1s ease backwards;
+   
   }
