@@ -178,6 +178,10 @@ nav {
 
 .btn {
   // @include boton($flecha:true);
+  @include boton($flecha: false);
+}
+.btnFlecha {
+  // @include boton($flecha:true);
   @include boton($flecha: true);
 }
 #hero {
@@ -258,3 +262,55 @@ nav {
     }
   }
 }
+
+@mixin contenedor ($amarillo){
+  margin: $margen-alto 0;
+  overflow: hidden;
+display: flex;
+border-radius: $radius;
+p{
+  padding: 1.5rem 0 1rem;
+}
+.izq{
+  flex: 1 0 50%;
+}
+.der{
+  flex: 1 0 50%;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+  .bandeja{
+    width: 70%;
+  }
+}
+@if $amarillo {
+  background: $amarillo-claro;
+}@else {
+  background: $azul-claro;
+}
+@include cel{
+  flex-wrap: wrap;
+  .izq, .der{
+    flex: 1 0 100%;
+  }
+  .bandeja{
+    margin: $margen-alto 0;
+  }
+}
+}
+.contenedordoble{
+@include contenedor($amarillo: false);
+}
+.contenedordoble-amarillo{
+@include contenedor($amarillo: false);
+}
+
+.section-header{
+  text-align: center;
+  margin-bottom: $margen-alto;
+  p{
+    color: $azul;
+    padding: 1rem 20%;
+  }
+}
+
