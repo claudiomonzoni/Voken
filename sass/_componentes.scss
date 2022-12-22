@@ -252,7 +252,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     li {
       padding: 0 0.2rem;
       margin-top: 0.7rem;
@@ -321,9 +321,13 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: space-evenly;
 }
 .card-main {
-  flex: 1 0 30%;
+  flex: 0 1 30%;
+  @include cel{
+    flex: 0 1 100%;
+  }
   .conte-img {
     position: relative;
     aspect-ratio: 1/1.2;
@@ -356,5 +360,14 @@ nav {
   }
   p{
     margin: 1rem 0 .5rem ;
+  }
+}
+
+.card-mini{
+  flex: 0 1 23%!important;
+  margin-top: 2rem;
+  @include cel{
+    flex: 0 1 100%!important;
+    margin-top: 0rem;
   }
 }
