@@ -1,3 +1,5 @@
+import gsap from "gsap";
+import Swiper from 'swiper';
 // submemu
 const sport = document.querySelector(".sport");
 const submenu = document.querySelector("#submenu");
@@ -43,8 +45,34 @@ window.addEventListener("click", function (e) {
   submenu.classList.remove("visibleMenu");
 });
 
+// swiper
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 10,
+  lazy: true,
+  // centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  // breakpoints: {
+  //   640: {
+  //     slidesPerView: 1,
+  //     spaceBetween: 20,
+  //   },
+  //   768: {
+  //     slidesPerView: 4,
+  //     spaceBetween: 40,
+  //   },
+  //   1024: {
+  //     slidesPerView: 5,
+  //     spaceBetween: 50,
+  //   },
+  // },
+});
+
 // importo gsap
-import gsap from "gsap";
+
 gsap.from(".logo, ul>li", {
   stagger: 0.1,
   y: 100,

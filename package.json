@@ -15,9 +15,9 @@
     "simple-icons": "^4.15.0"
   },
   "dependencies": {
-    "@glidejs/glide": "^3.4.1",
     "gsap": "^3.6.0",
     "mm": "^3.2.0",
-    "modulo": "0.0.3"
+    "modulo": "0.0.3",
+    "swiper": "^8.4.5"
   }
 }
