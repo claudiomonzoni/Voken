@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import Swiper from 'swiper';
 import {slideIndex} from './glide'
 slideIndex()
@@ -47,38 +48,33 @@ window.addEventListener("click", function (e) {
   submenu.classList.remove("visibleMenu");
 });
 
-// swiper
-// var swiper = new Swiper(".mySwiper", {
-//   slidesPerView: 1,
-//   spaceBetween: 10,
-//   lazy: true,
-//   centeredSlides: true,
-//   pagination: {
-//     el: ".swiper-pagination",
-//     clickable: true,
-//   },
-//   breakpoints: {
-//     479: {
-//       slidesPerView: 2,
-
-//     },
-//     768: {
-//       slidesPerView: 3,
-
-//     },
-//     1024: {
-//       slidesPerView: 3,
-//     },
-//   },
-// });
-
-
-
 // importo gsap
+// gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger)
 
-gsap.from(".logo, ul>li", {
+gsap.from(".logo, nav>ul>li", {
   stagger: 0.1,
   y: 100,
   opacity: 0,
   duration: 1, //1 segundo
+});
+
+
+gsap.from(".glide__slides>.news", {
+  scrollTrigger: ".glide__slides>.news",
+  stagger: 0.2,
+  y: 100,
+  opacity: 0,
+  duration: 1, //1 segundo
+});
+
+gsap.from("#sport>div", {
+  scrollTrigger: {
+    trigger: "#sport>div",
+    // toggleActions: "restart pause none pause"
+  },
+  stagger: 0.3,
+  y: 100,
+  opacity: 0,
+  duration: 2, //1 segundo
 });
