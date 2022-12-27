@@ -7,9 +7,9 @@
     <title>Volken Sport Fiesch</title>
     <link rel="stylesheet" href="style.scss" />
     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-  />    
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <div class="conte">
@@ -181,19 +181,7 @@
           </p>
         </div>
       </div>
-      <div class="cuadro">
-        <div class="bandeja">
-          <h2>Langlaufbekleidung</h2>
-          <a href="#" class="btnFlechaVacio"
-            ><img src="assets/der-doble.svg" alt="volken arrow button"
-          /></a>
-        </div>
-        <img
-          src="assets/sport-Langlaufbekleidung.png"
-          class="cover"
-          alt="Volken sport Langlaufbekleidung"
-        />
-      </div>
+
       <div class="cuadro">
         <div class="bandeja">
           <h2>Winterbekleidung</h2>
@@ -219,6 +207,20 @@
           src="assets/sport-kinder.png"
           class="cover"
           alt="Volken sport Kinderbekleidung"
+        />
+      </div>
+
+      <div class="cuadro">
+        <div class="bandeja">
+          <h2>Langlaufbekleidung</h2>
+          <a href="#" class="btnFlechaVacio"
+            ><img src="assets/der-doble.svg" alt="volken arrow button"
+          /></a>
+        </div>
+        <img
+          src="assets/sport-Langlaufbekleidung.png"
+          class="cover"
+          alt="Volken sport Langlaufbekleidung"
         />
       </div>
 
@@ -260,22 +262,98 @@
     </section>
 
     <section>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat hac
-            eget neque ac in <img src="assets/hero-volken-sport-mode-a.png" alt="borrar"> </div>
-          <div class="swiper-slide">Slide 2 <img src="assets/sport-kinder.png" alt="borrar"></div>
-          <div class="swiper-slide">Slide 3</div>
-          <div class="swiper-slide">Slide 4</div>
-          <div class="swiper-slide">Slide 5</div>
-          <div class="swiper-slide">Slide 6</div>
-          <div class="swiper-slide">Slide 7</div>
-          <div class="swiper-slide">Slide 8</div>
-          <div class="swiper-slide">Slide 9</div>
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="news">
+              <img src="https://via.placeholder.com/1920x1080" alt="" />
+              <div class="bandeja">
+                <h3>Bereit für den Herbst…</h3>
+                <p>
+                  Entdecken Sie die neue Herbst / Winter Kollektion Armani AX
+                </p>
+              </div>
+            </li>
+
+            <li class="news">
+              <img src="https://via.placeholder.com/1920x1080" alt="" />
+              <div class="bandeja">
+                <h3>MarccainHerbst / Winter2022 / 23</h3>
+                <p>Exklusive Designer Mode für Damen.</p>
+              </div>
+            </li>
+
+            <li class="news">
+              <img src="https://via.placeholder.com/1920x1080" alt="" />
+              <div class="bandeja">
+                <h3>Dein Herbst…Deine Auswahl…</h3>
+                <p>
+                  Lassen Sie sich von den Daunenjacken Cape Horn inspirieren.
+                </p>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="swiper-pagination"></div>
+
+        <div data-glide-el="controls">
+          <button data-glide-dir="<" class="btnFlechaVacio invertido">
+            <img src="assets/der-doble.svg" alt="arrow volken" />
+          </button>
+          <button data-glide-dir=">" class="btnFlechaVacio">
+            <img src="assets/der-doble.svg" alt="arrow volken" />
+          </button>
+        </div>
       </div>
     </section>
+
+    <footer>
+      <div id="foot" class="conte">
+        <img
+          src="assets/Volken-sporto-logo-footer.svg"
+          alt="volken sport fiesch"
+        />
+        <h3>Kontakt</h3>
+        <p>
+          T. 027 971 25 77 / F. 027 971 19 48 / mode@volken-sport.ch
+          <b>Hans-Ueli und Dorli Kreuzer</b> <b>Volken</b> - Furkastrasse 46
+          Haus Rondo 3984 Fiesch
+        </p>
+        <div id="horario">
+          <h3>Öffnungszeiten</h3>
+
+          <div class="bandeja">
+            <div>
+              <h4>Montag - Freitag</h4>
+              <p>08.30 - 12.00 Uhr <br>
+                13.30 - 18.00 Uhr</p>
+            </div>
+
+            <div>
+              <h4>Samstag</h4>
+              <p>08.30 - 17.00 Uhr</p>
+            </div>
+
+            <div>
+              <h4>Sonntag</h4>
+              <p>Geschlossen</p>
+            </div>
+
+            <div>
+              <h4>Feiertage</h4>
+              <p>Siehe unter News</p>
+            </div>
+
+            <div id="social">
+              <h4>Folge uns</h4>
+              <img src="assets/Facebook.svg" alt="facebook volken" />
+              <img src="assets/Instagram.svg" alt="instagram volken" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    
   </body>
   <script type="module" src="js/app.js"></script>
 </html>

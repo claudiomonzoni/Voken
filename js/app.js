@@ -1,5 +1,7 @@
 import gsap from "gsap";
-import Swiper from 'swiper';
+// import Swiper from 'swiper';
+import {slideIndex} from './glide'
+slideIndex()
 // submemu
 const sport = document.querySelector(".sport");
 const submenu = document.querySelector("#submenu");
@@ -46,30 +48,31 @@ window.addEventListener("click", function (e) {
 });
 
 // swiper
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
-  spaceBetween: 10,
-  lazy: true,
-  // centeredSlides: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  // breakpoints: {
-  //   640: {
-  //     slidesPerView: 1,
-  //     spaceBetween: 20,
-  //   },
-  //   768: {
-  //     slidesPerView: 4,
-  //     spaceBetween: 40,
-  //   },
-  //   1024: {
-  //     slidesPerView: 5,
-  //     spaceBetween: 50,
-  //   },
-  // },
-});
+// var swiper = new Swiper(".mySwiper", {
+//   slidesPerView: 1,
+//   spaceBetween: 10,
+//   lazy: true,
+//   centeredSlides: true,
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+//   breakpoints: {
+//     479: {
+//       slidesPerView: 2,
+
+//     },
+//     768: {
+//       slidesPerView: 3,
+
+//     },
+//     1024: {
+//       slidesPerView: 3,
+//     },
+//   },
+// });
+
+
 
 // importo gsap
 

@@ -194,6 +194,11 @@ nav {
     margin-right: 0 !important;
   }
 }
+.invertido {
+  img {
+    rotate: 180deg;
+  }
+}
 #hero {
   display: flex;
   flex-wrap: wrap;
@@ -388,21 +393,20 @@ nav {
   gap: 1rem;
   width: 80%;
   padding: 2rem 0;
-  margin-top:$margen-alto;
-  margin-bottom:$margen-alto;
-  @include cel{
+  margin-top: $margen-alto;
+  margin-bottom: $margen-alto;
+  @include cel {
     grid-template-columns: 1fr;
-    width:90%;
-    .cuadro, .cuadroIntro{
+    width: 90%;
+    .cuadro,
+    .cuadroIntro {
       height: 30vh;
     }
   }
-  h2{
-    font-size: clamp(1.2rem, 1.8vw, 2.3rem);
-    text-shadow: 2px 2px 8px $azul-claro;
-    @include cel{
-      text-shadow: 1px 1px 12px $azul;
-      color: #fff;
+  h2 {
+    text-shadow: 1px 1px 12px $azul;
+    color: #fff;
+    @include cel {
       font-size: 1.5rem;
     }
   }
@@ -413,8 +417,12 @@ nav {
     align-items: center;
     .bandeja {
       width: 60%;
-      @include cel{
+      @include cel {
         width: 80%;
+      }
+      h2 {
+        color: $acento;
+        text-shadow: none;
       }
     }
   }
@@ -422,7 +430,7 @@ nav {
     position: relative;
     border-radius: $radius;
     overflow: hidden;
-    img{
+    img {
       object-fit: cover;
       height: 100%;
     }
@@ -433,28 +441,107 @@ nav {
       position: absolute;
       bottom: 10%;
       left: 10%;
-    
     }
   }
 }
 
+.glide {
+  padding-left: 2.5rem !important;
+  @include cel {
+    padding-left: 1rem !important;
+  }
+ 
+  // @include hd {
+  //   padding-left: calc((100vw - 100rem) / 2) !important;
+  // }
 
-// borrar
-.mySwiper{
-  // padding-left: 10%!important;
+   @media (min-width: 1920px) {
+    padding-left: 4.5rem !important;
+  }
 
+
+  .news {
+    border-radius: $radius;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    box-shadow: 1px 6px 15px -2px rgba(142, 172, 216, 0.73);
+    img {
+      aspect-ratio: 6/7;
+      object-fit: cover;
+      flex: 1 0 100%;
+    }
+    .bandeja {
+      h3 {
+        font-size: clamp(1.4rem, 1.8vw, 2rem);
+        padding-bottom: 1rem;
+      }
+      display: block;
+      flex: 1 0 100%;
+      background: $azul-claro;
+      padding: 1rem;
+      white-space: normal;
+    }
+  }
 }
 
-.swiper-slide {
-  background: rgb(128, 127, 127);
-  flex: 1 0 30%;
+footer {
+  background: $azul;
+  text-align: center;
+  padding: 5rem 0;
+  color: #fff;
+  margin-top: $margen-alto;
+  img {
+    margin-bottom: 2rem;
+  }
+  h3,
+  h4 {
+    color: $amarillo;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  p {
+    padding: 0 20%;
+    line-height: 1.3rem;
+    @include cel{
+      padding: 0 10%;
+    }
+  }
+  #horario {
+    border-top: solid 2px $amarillo;
+    margin-top: 3rem;
+    h3 {
+      // display: inline-block;
+      width: fit-content;
+      position: relative;
+      background-color: $azul;
+      padding: 0 1rem;
+      top: -1rem;
+      left: 50%;
+      transform: translatex(-50%);
+    }
+    .bandeja {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-evenly;
+
+      div {
+        flex: 1 0 fit-content;
+        @include cel{
+          flex: 1 0 100%;
+        }
+        h4 {
+          padding-bottom: 0.5rem;
+        }
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
 }
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
