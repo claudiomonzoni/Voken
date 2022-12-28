@@ -364,9 +364,9 @@ nav {
       scroll-snap-type: inline mandatory;
       img{
         cursor: grab;
-        @include cel{
-          scroll-snap-align: center;
-        }
+        // @include cel{
+        //   scroll-snap-align: center;
+        // }
       }
     }
     .logo {

@@ -51,7 +51,10 @@ window.addEventListener("click", function (e) {
 
 
 // logica para escrollear en pc
-const card_slide = document.querySelector(".slider");
+const card_slide = document.querySelectorAll(".slider");
+card_slide.forEach(slide =>{
+  
+} )
 let arrastrable = false, prevPageX, prevScrollLeft;
 const arrastrame = (e) => {
   arrastrable = true;
