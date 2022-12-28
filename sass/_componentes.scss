@@ -356,12 +356,18 @@ nav {
       width: 100%;
     }
     .slider{
-      // display: flex;
-      // flex-wrap: nowrap;
       display: grid;
       grid-auto-flow: column;
       grid-auto-columns: 95%;
       overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-snap-type: inline mandatory;
+      img{
+        cursor: grab;
+        @include cel{
+          scroll-snap-align: center;
+        }
+      }
     }
     .logo {
       display: flex;
