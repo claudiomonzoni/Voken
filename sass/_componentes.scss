@@ -79,7 +79,7 @@ nav {
   width: 100%;
   z-index: 900;
   position: relative;
-  
+
   .logo {
     width: clamp(9rem, 15vw, 12rem);
     padding: 1em;
@@ -329,7 +329,7 @@ nav {
   p {
     color: $azul;
     padding: 1rem 20%;
-    @include cel{
+    @include cel {
       padding: 1rem 10%;
     }
   }
@@ -341,17 +341,18 @@ nav {
   gap: 1rem;
   justify-content: space-evenly;
 }
-.cardSlider-extras{
-background: $azul-claro;
-    grid-auto-columns: 96%!important;
+.cardSlider-extras {
+  background: $azul-claro;
+  grid-auto-columns: 96% !important;
 
-  img{
+  img {
     cursor: url("assets/cursor-hand-open.png"), grab;
-    @include cel{
+    @include cel {
       scroll-snap-align: start;
     }
   }
 }
+
 .card-main {
   flex: 0 1 30%;
   @include cel {
@@ -359,20 +360,27 @@ background: $azul-claro;
   }
   .conte-img {
     position: relative;
-    aspect-ratio:7/8;
+    aspect-ratio: 7/8;
     overflow: hidden;
     border-radius: $radius;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @extend .anima;
+    &:hover {
+      transform: scale(1.1);
+    }
     img {
       object-fit: cover;
       width: 100%;
     }
-    .slider{
+    .slider {
       display: grid;
       grid-auto-flow: column;
       grid-auto-columns: 102%;
-      overflow-x: auto;
-      overscroll-behavior-inline: contain;
-      scroll-snap-type: inline mandatory;
       // img{
       //   @include cel{
       //     scroll-snap-align: start;
@@ -404,8 +412,6 @@ background: $azul-claro;
     margin: 1rem 0 0.5rem;
   }
 }
-
-
 
 #sport {
   border-top: solid 1px $acento;
@@ -472,15 +478,14 @@ background: $azul-claro;
   @include cel {
     padding-left: 1rem !important;
   }
- 
+
   // @include hd {
   //   padding-left: calc((100vw - 100rem) / 2) !important;
   // }
 
-   @media (min-width: 1920px) {
+  @media (min-width: 1920px) {
     padding-left: 4.5rem !important;
   }
-
 
   .news {
     border-radius: $radius;
@@ -530,7 +535,7 @@ footer {
   p {
     padding: 0 20%;
     line-height: 1.3rem;
-    @include cel{
+    @include cel {
       padding: 0 10%;
     }
   }
@@ -555,7 +560,7 @@ footer {
 
       div {
         flex: 1 0 fit-content;
-        @include cel{
+        @include cel {
           flex: 1 0 100%;
         }
         h4 {
@@ -568,4 +573,3 @@ footer {
     }
   }
 }
-

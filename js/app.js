@@ -47,51 +47,44 @@ window.addEventListener("click", function (e) {
   submenu.classList.remove("visibleMenu");
 });
 
-
-
-
 // logica para escrollear en pc
-const card_slide = document.querySelectorAll(".slider");
-let arrastrable = false, prevPageX, prevScrollLeft;
+const card_slide = document.querySelectorAll(".conte-img");
+let arrastrable = false,
+  prevPageX,
+  prevScrollLeft;
 
+card_slide.forEach((slide) => {
+  const card_img = slide.querySelector(".slider").getElementsByTagName("img");
 
-
-card_slide.forEach(slide => {
-  const card_img = slide.getElementsByTagName("img")
-
-    if ( card_img.length > 1){
-      slide.classList.add("cardSlider-extras")
-      
-      const arrastrame = (e) => {
-        arrastrable = true;
-    prevPageX = e.pageX;
-    prevScrollLeft = slide.scrollLeft;
+  if (card_img.length > 1) {
+    slide.querySelector(".slider").classList.add("cardSlider-extras");
     
-  };
-  const arrastrar = (e) => {
-    if (!arrastrable) return;
-    e.preventDefault();
-    let posDiff = e.pageX - prevPageX
-    slide.scrollLeft = prevScrollLeft -posDiff
-  };
-  const yanosearrastra = () => {
-    arrastrable = false;
-  };
-  
-  
-  slide.addEventListener("mousedown", arrastrame);
-  slide.addEventListener("mousemove", arrastrar);
-  slide.addEventListener("mouseup", yanosearrastra);
-}
+    const arrastrame = (e) => {
+      arrastrable = true;
+      prevPageX = e.pageX;
+      prevScrollLeft = slide.scrollLeft;
+    };
+    const arrastrar = (e) => {
+      if (!arrastrable) return;
+      e.preventDefault();
+      let posDiff = e.pageX - prevPageX;
+      slide.scrollLeft = prevScrollLeft - posDiff;
+    };
+    const yanosearrastra = () => {
+      arrastrable = false;
+    };
+ 
 
-} )
+    slide.addEventListener("mousedown", arrastrame);
+    slide.addEventListener("mousemove", arrastrar);
+    slide.addEventListener("mouseup", yanosearrastra);
+    slide.addEventListener("mouseleave", yanosearrastra);
+  }
+});
 
 // card_slide.addEventListener("mousedown", arrastrame);
 // card_slide.addEventListener("mousemove", arrastrar);
 // card_slide.addEventListener("mouseup", yanosearrastra);
-
-
-
 
 // gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(ScrollTrigger);
