@@ -52,28 +52,43 @@ window.addEventListener("click", function (e) {
 
 // logica para escrollear en pc
 const card_slide = document.querySelectorAll(".slider");
-card_slide.forEach(slide =>{
-  
-} )
 let arrastrable = false, prevPageX, prevScrollLeft;
-const arrastrame = (e) => {
-  arrastrable = true;
-  prevPageX = e.pageX;
-  prevScrollLeft = card_slide.scrollLeft;
-};
-const arrastrar = (e) => {
-  if (!arrastrable) return;
-  e.preventDefault();
-  let posDiff = e.pageX - prevPageX
-  card_slide.scrollLeft = prevScrollLeft -posDiff
-};
-const yanosearrastra = () => {
-  arrastrable = false;
-};
 
-card_slide.addEventListener("mousedown", arrastrame);
-card_slide.addEventListener("mousemove", arrastrar);
-card_slide.addEventListener("mouseup", yanosearrastra);
+
+
+card_slide.forEach(slide => {
+  const card_img = slide.getElementsByTagName("img")
+
+    if ( card_img.length > 1){
+      slide.classList.add("cardSlider-extras")
+      
+      const arrastrame = (e) => {
+        arrastrable = true;
+    prevPageX = e.pageX;
+    prevScrollLeft = slide.scrollLeft;
+    
+  };
+  const arrastrar = (e) => {
+    if (!arrastrable) return;
+    e.preventDefault();
+    let posDiff = e.pageX - prevPageX
+    slide.scrollLeft = prevScrollLeft -posDiff
+  };
+  const yanosearrastra = () => {
+    arrastrable = false;
+  };
+  
+  
+  slide.addEventListener("mousedown", arrastrame);
+  slide.addEventListener("mousemove", arrastrar);
+  slide.addEventListener("mouseup", yanosearrastra);
+}
+
+} )
+
+// card_slide.addEventListener("mousedown", arrastrame);
+// card_slide.addEventListener("mousemove", arrastrar);
+// card_slide.addEventListener("mouseup", yanosearrastra);
 
 
 
