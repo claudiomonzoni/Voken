@@ -1,7 +1,6 @@
 import Glide from '@glidejs/glide'
 import { Controls } from '@glidejs/glide/dist/glide.modular.esm'
 
-console.log(Controls)
 export function slideIndex(){
 new Glide('.glide',{
  type: 'carousel',
@@ -25,5 +24,7 @@ new Glide('.glide',{
 }).mount(
   {Controls}
 )
+
+
 
 }

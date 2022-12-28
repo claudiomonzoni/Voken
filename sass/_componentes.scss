@@ -348,12 +348,20 @@ nav {
   }
   .conte-img {
     position: relative;
-    aspect-ratio: 1/1.2;
+    aspect-ratio:7/8;
     overflow: hidden;
     border-radius: $radius;
     img {
       object-fit: cover;
       width: 100%;
+    }
+    .slider{
+      // display: flex;
+      // flex-wrap: nowrap;
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 95%;
+      overflow-x: auto;
     }
     .logo {
       display: flex;
@@ -381,14 +389,7 @@ nav {
   }
 }
 
-.card-mini {
-  flex: 0 1 23% !important;
-  margin-top: 2rem;
-  @include cel {
-    flex: 0 1 100% !important;
-    margin-top: 0rem;
-  }
-}
+
 
 #sport {
   border-top: solid 1px $acento;
@@ -550,3 +551,4 @@ footer {
     }
   }
 }
+
