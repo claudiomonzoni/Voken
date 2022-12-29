@@ -48,16 +48,24 @@ window.addEventListener("click", function (e) {
 });
 
 // logica para escrollear en pc
-const card_slide = document.querySelectorAll(".conte-img");
+const card_slide = document.querySelectorAll(".conte-img")
+const primerImagen = document.querySelectorAll(".slider img")[0]
+
+// console.log(card_slide)
+
 let arrastrable = false,
   prevPageX,
   prevScrollLeft;
+let primerImaAncho = primerImagen.clientWidth
 
 card_slide.forEach((slide) => {
   const card_img = slide.querySelector(".slider").getElementsByTagName("img");
+  const card_btn = slide.parentElement.querySelector(".card_derecha");
 
   if (card_img.length > 1) {
     slide.querySelector(".slider").classList.add("cardSlider-extras");
+    slide.parentElement.classList.add("muestrate_btn");
+
 
     const arrastrame = (e) => {
       arrastrable = true;
@@ -81,18 +89,26 @@ card_slide.forEach((slide) => {
         duration: 1, //1 segundo
       });
     };
-    const aldehover = () => {
-      console.log(laanimacio);
-      laanimacio.kill();
-      laanimacio.play(0);
-    };
+    // const aldehover = () => {
+    //   console.log(laanimacio);
+    //   laanimacio.kill();
+    //   laanimacio.play(0);
+    // };
+
+    
+    card_btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      slide.scrollLeft += primerImaAncho
+      // slide.scrollLeft += e.target
+
+    });
 
     slide.addEventListener("mousedown", arrastrame);
     slide.addEventListener("mousemove", arrastrar);
     slide.addEventListener("mouseup", yanosearrastra);
     slide.addEventListener("mouseleave", yanosearrastra);
-    slide.addEventListener("mouseleave", aldehover);
-    slide.addEventListener("mouseenter", alhover);
+    // slide.addEventListener("mouseleave", aldehover);
+    // slide.addEventListener("mouseenter", alhover);
   }
 });
 
