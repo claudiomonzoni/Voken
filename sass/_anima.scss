@@ -1,8 +1,30 @@
 .anima {
-    -webkit-transition: all 0.35s ease-in-out;
-    -o-transition: all 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.45s ease-in-out;
+    -o-transition: all 0.45s ease-in-out;
+    transition: all 0.45s ease-in-out;
   }
+  // animacion de las cards
+
+  // @keyframes cardhover{
+  //   from{   
+  //     transform: translateX(0%);
+  //   }
+  //   to{  
+  //     transform: translateX(-20%);
+
+  //   }
+  // }
+
+  // @keyframes cardhoverSalida{
+  //   from{   
+  //     transform: translateX(-20%);
+  //   }
+  //   to{  
+  //     transform: translateX(0%);
+
+  //   }
+  // }
+
 
   // animacion menu
   @keyframes menuAbierto {

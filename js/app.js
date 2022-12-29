@@ -58,11 +58,12 @@ card_slide.forEach((slide) => {
 
   if (card_img.length > 1) {
     slide.querySelector(".slider").classList.add("cardSlider-extras");
-    
+
     const arrastrame = (e) => {
       arrastrable = true;
       prevPageX = e.pageX;
       prevScrollLeft = slide.scrollLeft;
+      slide.querySelector(".slider").classList.remove("alhover");
     };
     const arrastrar = (e) => {
       if (!arrastrable) return;
@@ -73,12 +74,25 @@ card_slide.forEach((slide) => {
     const yanosearrastra = () => {
       arrastrable = false;
     };
- 
+    const alhover = (e) => {
+      const elslide = slide.querySelector(".slider");
+      var laanimacio = gsap.from(elslide, {
+        xPercent: -300,
+        duration: 1, //1 segundo
+      });
+    };
+    const aldehover = () => {
+      console.log(laanimacio);
+      laanimacio.kill();
+      laanimacio.play(0);
+    };
 
     slide.addEventListener("mousedown", arrastrame);
     slide.addEventListener("mousemove", arrastrar);
     slide.addEventListener("mouseup", yanosearrastra);
     slide.addEventListener("mouseleave", yanosearrastra);
+    slide.addEventListener("mouseleave", aldehover);
+    slide.addEventListener("mouseenter", alhover);
   }
 });
 

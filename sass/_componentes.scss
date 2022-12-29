@@ -344,15 +344,28 @@ nav {
 .cardSlider-extras {
   background: $azul-claro;
   grid-auto-columns: 96% !important;
-
+  @extend .anima;
   img {
     cursor: url("assets/cursor-hand-open.png"), grab;
     @include cel {
       scroll-snap-align: start;
     }
+    &:last-child{
+      object-fit: contain !important;
+      background: $azul-claro;
+    }
   }
-}
 
+}
+// animaciones disparadas de js
+.alhover{
+  transform: translateX(-20%);
+  // animation: cardhover 1.2s ease forwards;
+}
+// .aldeshover{
+//   transform: translateX(0%);
+//   // animation: cardhoverSalida 1.2s ease backwards;
+// }
 .card-main {
   flex: 0 1 30%;
   @include cel {
