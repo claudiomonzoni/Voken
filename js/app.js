@@ -76,22 +76,23 @@ card_slide.forEach((slide) => {
     };
     const alhover = (e) => {
       const elslide = slide.querySelector(".slider");
-      var laanimacio = gsap.from(elslide, {
+      var laanimacion = gsap.from(elslide, {
         xPercent: -300,
-        duration: 1, //1 segundo
+  
       });
+      // aldehover(laanimacion)
     };
-    const aldehover = () => {
-      console.log(laanimacio);
-      laanimacio.kill();
-      laanimacio.play(0);
+    const aldehover = (laanimacion) => {
+      setTimeout(() => {
+        console.log(laanimacion)  
+      }, 2000);
     };
 
     slide.addEventListener("mousedown", arrastrame);
     slide.addEventListener("mousemove", arrastrar);
     slide.addEventListener("mouseup", yanosearrastra);
     slide.addEventListener("mouseleave", yanosearrastra);
-    slide.addEventListener("mouseleave", aldehover);
+    // slide.addEventListener("mouseleave", aldehover);
     slide.addEventListener("mouseenter", alhover);
   }
 });
