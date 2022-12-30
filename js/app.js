@@ -119,12 +119,40 @@ card_slide.forEach((slide) => {
 // gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".logo, nav>ul>li", {
+const tl = gsap.timeline({repeat:0})
+tl.from(".logo, nav>ul>li", {
   stagger: 0.1,
   y: 100,
   opacity: 0,
   duration: 1, //1 segundo
 });
+
+tl.from("#hero, .izq>.bandeja>h1, .izq>.bandeja>p, .logos, .izq>.bandeja>a, .der, .der>img", {
+  stagger: 0.1,
+  y: 100,
+  opacity: 0,
+  duration: 1, //1 segundo
+},"-=1.5");
+
+
+gsap.from('#storehome',{
+  scrollTrigger: "#storehome",
+  y: 100,
+  opacity: 0
+})
+
+gsap.from('.section-header',{
+  scrollTrigger: ".section-header",
+  y: 100,
+  opacity: 0
+})
+
+gsap.from('#productos>div',{
+  scrollTrigger: "#productos",
+  stagger: 0.3,
+  y: 100,
+  opacity: 0
+})
 
 gsap.from(".glide__slides>.news", {
   scrollTrigger: ".glide__slides>.news",
