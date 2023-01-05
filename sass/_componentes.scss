@@ -98,16 +98,13 @@ nav {
     }
   }
 
-  .sport:hover + ul {
-    visibility: visible;
-  }
-
   .sport {
     @include cel {
     }
   }
   #submenu {
     visibility: hidden;
+    opacity: 0;
     position: absolute;
     width: 100%;
     right: 0;
@@ -117,7 +114,6 @@ nav {
     border-radius: $radius;
     display: flex;
     flex-wrap: wrap;
-    @extend .anima;
     a {
       color: #fff;
     }
@@ -280,6 +276,141 @@ nav {
   }
 }
 
+#hero-int {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
+  min-height: 70vh;
+  margin-bottom: $margen-alto;
+  align-items: center;
+  padding: 0 2rem;
+
+  @include cel {
+    padding: 0 0rem;
+    margin-bottom: 2rem;
+  }
+
+  .izq {
+    display: flex;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    border-radius: $radius;
+    padding: 3rem 0;
+    min-height: 70%;
+    box-shadow: 1px 6px 15px -2px rgba(142, 172, 216, 0.73);
+    .bandeja {
+      width: 75%;
+      p {
+        color: $acento;
+        padding: 1rem 0;
+        span {
+          color: #999;
+          font-weight: bold;
+        }
+      }
+    }
+    @include cel {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      order: 2;
+      .bandeja {
+        width: 85%;
+      }
+    }
+  }
+  .der {
+    align-items: center;
+    justify-content: center;
+    grid-column: 2 / -1;
+    grid-row: 1;
+    img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: $radius;
+    }
+    @include cel {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      order: 1;
+    }
+  }
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    li {
+      padding: 0 0.2rem;
+      margin-top: 0.7rem;
+      flex: 0 1 15%;
+      @include cel {
+        flex: 0 1 25%;
+        padding: 0 0.5rem;
+      }
+    }
+  }
+}
+
+#hero-team {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  flex-wrap: wrap;
+  min-height: 70vh;
+  margin-bottom: $margen-alto;
+  align-items: center;
+  padding: 0 2rem;
+  gap: 2rem;
+
+  @include cel {
+    padding: 0 0rem;
+    margin-bottom: 2rem;
+  }
+
+  .izq {
+    display: flex;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    padding: 3rem 0;
+    min-height: 70%;
+    .bandeja {
+      p {
+        color: $acento;
+        padding: 1rem 0;
+      }
+    }
+    @include cel {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      text-align: center;
+      padding: 0rem 0;
+      min-height: 0%;
+    }
+  }
+  .der {
+    align-items: center;
+    justify-content: center;
+    grid-column: 3 / -1;
+    grid-row: 1;
+    img {
+      width: 100%;
+      aspect-ratio: 3/2.3;
+      object-fit: cover;
+      border-radius: $radius;
+    }
+    @include cel {
+      grid-column: 1 / -1;
+      grid-row: auto;
+    }
+  }
+}
+
 @mixin contenedor($amarillo) {
   margin: $margen-alto 0;
   overflow: hidden;
@@ -288,14 +419,27 @@ nav {
   p {
     padding: 1.5rem 0 1rem;
   }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $radius;
+    box-shadow: 1px 6px 15px -2px rgba(142, 172, 216, 0.73);
+  }
   .izq {
     flex: 1 0 50%;
+    @include cel{
+      order: 1;
+    }
   }
   .der {
     flex: 1 0 50%;
     display: inherit;
     justify-content: center;
     align-items: center;
+    @include cel{
+      order: 2;
+    }
     .bandeja {
       width: 70%;
     }
@@ -320,7 +464,7 @@ nav {
   @include contenedor($amarillo: false);
 }
 .contenedordoble-amarillo {
-  @include contenedor($amarillo: false);
+  @include contenedor($amarillo: true);
 }
 
 .section-header {
@@ -356,10 +500,10 @@ nav {
     }
   }
 }
-.muestrate_btn{
-  // aparece el boton en las cartas 
-  .card_derecha{
-    display: block!important;
+.muestrate_btn {
+  // aparece el boton en las cartas
+  .card_derecha {
+    display: block !important;
   }
 }
 // animaciones disparadas de js
@@ -367,6 +511,12 @@ nav {
   transform: translateX(-20%);
 }
 
+.card-menor {
+  flex: 0 1 23% !important;
+  @include cel {
+    flex: 0 1 100% !important;
+  }
+}
 .card-main {
   flex: 0 1 30%;
   position: relative;
@@ -377,7 +527,7 @@ nav {
     // soy el boton en las cartas con carrusel
     position: absolute;
     right: 20px;
-    top:0px;
+    top: 0px;
     z-index: 200;
     display: none;
   }
@@ -399,13 +549,15 @@ nav {
     }
     img {
       object-fit: cover;
+      aspect-ratio: 6/7.2;
       width: 100%;
+      height: 100%;
     }
     .slider {
       display: grid;
       grid-auto-flow: column;
       grid-auto-columns: 102%;
-      
+
       // img{
       //   @include cel{
       //     scroll-snap-align: start;
@@ -596,5 +748,59 @@ footer {
         }
       }
     }
+  }
+}
+
+#team{
+  position: relative;
+  background: $azul;
+  color: #fff;
+  min-height: 100vh;
+  padding: 10% 0;
+  display: flex;
+  align-items: center;
+  transform: translateY(-15%);
+  @include cel{
+    transform: translateY(-10%);
+    padding: 35% 0;
+  }
+  z-index: -1;
+  h2, h3{
+    color: #fff;
+  }
+  p{
+    max-width: 60%;
+    padding: .5rem 0 3rem;
+    @include cel{
+      max-width: 100%;
+    }
+  }
+  #members{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+    h3{
+      font-size: clamp(1.2rem, 1.8vw, 3rem);
+      padding: 1rem 0 .3rem;
+    }
+  }
+  .member{
+    flex: 0 1 18%;
+    margin-bottom: 2rem;
+    @include cel{
+      flex: 0 1 40%;
+    }
+    img{
+      aspect-ratio: 5/5.2;
+      object-fit: cover;
+      border-radius: $radius;
+    }
+  }
+}
+#history{
+  margin-top: -23%;
+  @include cel{
+    margin-top: -80%;
   }
 }
