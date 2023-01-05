@@ -428,12 +428,18 @@ nav {
   }
   .izq {
     flex: 1 0 50%;
+    @include cel{
+      order: 1;
+    }
   }
   .der {
     flex: 1 0 50%;
     display: inherit;
     justify-content: center;
     align-items: center;
+    @include cel{
+      order: 2;
+    }
     .bandeja {
       width: 70%;
     }

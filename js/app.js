@@ -63,64 +63,58 @@ const primerImagen = document.querySelectorAll(".slider img")[0];
 let arrastrable = false,
   prevPageX,
   prevScrollLeft;
-let primerImaAncho = primerImagen.clientWidth;
-
-card_slide.forEach((slide) => {
-  const card_img = slide.querySelector(".slider").getElementsByTagName("img");
-  const card_btn = slide.parentElement.querySelector(".card_derecha");
-
-  if (card_img.length > 1) {
-    slide.querySelector(".slider").classList.add("cardSlider-extras");
-    slide.parentElement.classList.add("muestrate_btn");
-
-    const arrastrame = (e) => {
-      arrastrable = true;
-      prevPageX = e.pageX;
-      prevScrollLeft = slide.scrollLeft;
-      slide.querySelector(".slider").classList.remove("alhover");
-    };
-    const arrastrar = (e) => {
-      if (!arrastrable) return;
-      e.preventDefault();
-      let posDiff = e.pageX - prevPageX;
-      slide.scrollLeft = prevScrollLeft - posDiff;
-    };
-    const yanosearrastra = () => {
-      arrastrable = false;
-    };
-    const alhover = (e) => {
-      const elslide = slide.querySelector(".slider");
-      var laanimacio = gsap.from(elslide, {
-        xPercent: -300,
-        duration: 1, //1 segundo
-      });
-    };
-    // const aldehover = () => {
-    //   console.log(laanimacio);
-    //   laanimacio.kill();
-    //   laanimacio.play(0);
-    // };
-
-    card_btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      slide.scrollLeft += primerImaAncho;
-      // slide.scrollLeft += e.target
+  if(primerImagen){
+    let primerImaAncho = primerImagen.clientWidth
+    card_slide.forEach((slide) => {
+      const card_img = slide.querySelector(".slider").getElementsByTagName("img");
+      const card_btn = slide.parentElement.querySelector(".card_derecha");
+    
+      if (card_img.length > 1) {
+        slide.querySelector(".slider").classList.add("cardSlider-extras");
+        slide.parentElement.classList.add("muestrate_btn");
+    
+        const arrastrame = (e) => {
+          arrastrable = true;
+          prevPageX = e.pageX;
+          prevScrollLeft = slide.scrollLeft;
+          slide.querySelector(".slider").classList.remove("alhover");
+        };
+        const arrastrar = (e) => {
+          if (!arrastrable) return;
+          e.preventDefault();
+          let posDiff = e.pageX - prevPageX;
+          slide.scrollLeft = prevScrollLeft - posDiff;
+        };
+        const yanosearrastra = () => {
+          arrastrable = false;
+        };
+        const alhover = (e) => {
+          const elslide = slide.querySelector(".slider");
+          var laanimacio = gsap.from(elslide, {
+            xPercent: -300,
+            duration: 1, //1 segundo
+          });
+        };
+    
+    
+        card_btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          slide.scrollLeft += primerImaAncho;
+          // slide.scrollLeft += e.target
+        });
+    
+        slide.addEventListener("mousedown", arrastrame);
+        slide.addEventListener("mousemove", arrastrar);
+        slide.addEventListener("mouseup", yanosearrastra);
+        slide.addEventListener("mouseleave", yanosearrastra);
+      }
     });
-
-    slide.addEventListener("mousedown", arrastrame);
-    slide.addEventListener("mousemove", arrastrar);
-    slide.addEventListener("mouseup", yanosearrastra);
-    slide.addEventListener("mouseleave", yanosearrastra);
-    // slide.addEventListener("mouseleave", aldehover);
-    // slide.addEventListener("mouseenter", alhover);
   }
-});
+  
 
-// card_slide.addEventListener("mousedown", arrastrame);
-// card_slide.addEventListener("mousemove", arrastrar);
-// card_slide.addEventListener("mouseup", yanosearrastra);
 
-// gsap.registerPlugin(ScrollTrigger)
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 const tl = gsap.timeline({ repeat: 0 });
@@ -187,4 +181,21 @@ if (
     opacity: 0,
     duration: 1, //1 segundo
   });
+}
+
+const heroint = document.getElementById("hero-int")
+const heroteam = document.getElementById("hero-team")
+
+
+if (
+  heroint
+) {
+
+ console.log("estoy en secciones")
+}
+if (
+  heroteam
+) {
+
+ console.log("estoy en team")
 }
