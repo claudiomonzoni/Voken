@@ -126,7 +126,7 @@ tl.from(".logo, nav>ul>li", {
 });
 
 tl.from(
-  "#hero, .izq>.bandeja>h1, .izq>.bandeja>p, .logos, .izq>.bandeja>a, .der, .der>img",
+  "#hero, .izq, .izq>.bandeja>h1, .izq>.bandeja>p, .logos, .izq>.bandeja>a, .der, .der>img",
   {
     stagger: 0.1,
     y: 100,
