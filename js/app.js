@@ -113,9 +113,7 @@ card_slide.forEach((slide) => {
   }
 });
 
-// card_slide.addEventListener("mousedown", arrastrame);
-// card_slide.addEventListener("mousemove", arrastrar);
-// card_slide.addEventListener("mouseup", yanosearrastra);
+
 
 // gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(ScrollTrigger);

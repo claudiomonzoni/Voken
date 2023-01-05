@@ -389,7 +389,7 @@ nav {
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
     &::-webkit-scrollbar {
       display: none;
     }
